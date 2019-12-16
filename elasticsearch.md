@@ -243,8 +243,109 @@
 >       		}
 >           }
 >       }
+>   
+>       {
+>           "query": {
+>       		"range": {
+>       			"publish_date": {
+>       				"gt": "2017-01-01",
+>       				"lte": "now"
+>       			}
+>       		}
+>           }
+>       }
 >   ```
->- Filter context: 
+>- Filter context: 在查询过程中，值判断该文档是否满足条件，只有 Yes 或者 No
+>```
+>   {
+>       "query": {
+>   		"bool": {
+>   			"filter": {
+>   				"term": {
+>   					"word_count": 1000
+>   				}
+>   			}
+>   		}
+>       }
+>   }
+>```
 >### 复合条件查询
 >以一定的逻辑组合子条件查询
----
+>- 固定分数查询
+>```
+>   {
+>       "query": {
+>   		"constant_score": {
+>   			"filter": {
+>   				"match": {
+>   					"title": "ElasticSearch"
+>   				}
+>   			},
+>   			"boost": 2
+>   		}
+>       }
+>   }
+>```
+>- 布尔查询
+>```
+>   {
+>       "query": {
+>   		"bool": {
+>   			"should": [
+>   				{
+>   					"match": {
+>   						"author": "瓦力"
+>   					}
+>   				},
+>   				{
+>   					"match": {
+>   						"title": "ElasticSearch"
+>   					}
+>   				}
+>   			]
+>   		}
+>       }
+>   }
+>
+>   {
+>       "query": {
+>           "bool": {
+>               "must": [
+>                   {
+>                       "match": {
+>                           "author": "瓦力"
+>                       }
+>                   },
+>                   {
+>                       "match": {
+>                           "title": "ElasticSearch"
+>                       }
+>                   }
+>               ],
+>               "filter": [
+>                   {
+>                       "term": {
+>                           "word_count": 1000
+>                       }
+>                   }
+>               ]
+>           }
+>       }
+>   }
+>   
+>   {
+>       "query": {
+>           "bool": {
+>               "must_not": {
+>                   "match": {
+>                       "author": "瓦力"
+>                   }
+>               }
+>           }
+>       }
+>   }
+>```
+>- more...
+>---
+## 实战
+mvn spring-boot:run
