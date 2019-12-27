@@ -175,6 +175,7 @@ must                    POST    /person/_search
                           ]
                         }
 ```
+---
 >### [elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)
 >目前 ES 开源社区对于中文分词支持最好的插件  
 >拷贝和解压 release 下的文件到 elasticsearch 插件目录, 如: plugins/ik， 重启 elasticsearch

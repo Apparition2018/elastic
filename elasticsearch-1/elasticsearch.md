@@ -14,21 +14,25 @@
 - 分布式安装
 ---
 ## 配置修改
-- 跨域：
-    - http.cors.enabled: true
-    - http.cors.allow-origin: "*"
-- 集群：
-    - 主：
-        - cluster.name: wali
-        - node.name: master
-        - node.master: true
-        - network.host: 127.0.0.1
-    - 从：
-        - cluster.name: wali
-        - node.name: slave1
-        - network.host: 127.0.0.1
-        - http.port: 9201
-        - discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
+修改 config/elasticsearch.yml
+```
+# 跨域
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+
+# 集群
+# 主
+cluster.name: wali
+node.name: master
+node.master: true
+network.host: 127.0.0.1
+# 从
+cluster.name: wali
+node.name: slave1
+network.host: 127.0.0.1
+http.port: 9201
+discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
+```
 ---
 ## 基础概念
 - 集群和节点
