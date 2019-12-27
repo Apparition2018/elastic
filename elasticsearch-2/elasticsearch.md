@@ -231,4 +231,5 @@ must                    POST    /person/_search
 >                             ]
 >                           }
 >   ```
+>- 自定义词典：在 config/IKAnalyzer.cfg.xml 中配置自定义扩展文件 <entry key="ext_dict">ext_dict.dic</entry>
 >---
