@@ -15,7 +15,7 @@
         <!-- ElasticSearch 构建博客检索系统 -->
         <module>elasticsearch-2</module>
         <!-- Elastic Stack 入门 -->
-        <module>elasticstack</module>
+        <module>elastic-stack</module>
     </modules>
 
 </project>
