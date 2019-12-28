@@ -1,0 +1,13 @@
+POST /accounts/person/1
+{
+  "name": "John",
+  "lastname": "Doe",
+  "job_description": "Systems administrator and Linux specialist"
+}
+
+POST /accounts/person/2
+{
+  "name": "alfred",
+  "lastname": "way",
+  "job_description": "teacher"
+}

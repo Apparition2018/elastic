@@ -5,15 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ljh</groupId>
-    <artifactId>elasticsearch</artifactId>
+    <artifactId>elastic-stack</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <!-- ElasticSearch入门 -->
+        <!-- ElasticSearch 入门 -->
         <module>elasticsearch-1</module>
         <!-- ElasticSearch 构建博客检索系统 -->
         <module>elasticsearch-2</module>
+        <!-- Elastic Stack 入门 -->
+        <module>elasticstack</module>
     </modules>
 
 </project>

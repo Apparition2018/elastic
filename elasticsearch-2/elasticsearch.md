@@ -10,6 +10,7 @@
 |Row|Document|
 |Column|Field|
 |Schema|Mapping|
+
 MySQL: select * from user.user_info where name = '张三';  
 ES: GET /user/user_info/_search?q=name:张三
 ---
