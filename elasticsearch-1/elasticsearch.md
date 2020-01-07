@@ -161,9 +161,10 @@ discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
 >       ]
 >   }
 >```
->- 聚合查询
+>- [聚合查询](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html)
 >```
 >   {
+>       "size": 0,
 >   	"aggs": {
 >   		"group_by_word_count": {
 >   			"terms": {
@@ -177,8 +178,57 @@ discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
 >   		}
 >   	}
 >   }
->
+>结果：
 >   {
+>     "took": 1,
+>     "timed_out": false,
+>     "_shards": {
+>       "total": 5,
+>       "successful": 5,
+>       "skipped": 0,
+>       "failed": 0
+>     },
+>     "hits": {
+>       "total": 12,
+>       "max_score": 0,
+>       "hits": []
+>     },
+>     "aggregations": {
+>       "group_by_publish_date": {
+>           ...
+>       },
+>       "group_by_word_count": {
+>         "doc_count_error_upper_bound": 0,
+>         "sum_other_doc_count": 0,
+>         "buckets": [
+>           {
+>             "key": 1000,
+>             "doc_count": 6
+>           },
+>           {
+>             "key": 2000,
+>             "doc_count": 2
+>           },
+>           {
+>             "key": 3000,
+>             "doc_count": 2
+>           },
+>           {
+>             "key": 5000,
+>             "doc_count": 1
+>           },
+>           {
+>             "key": 10000,
+>             "doc_count": 1
+>           }
+>         ]
+>       }
+>     }
+>   }
+>```
+>```
+>   {
+>       "size": 0,
 >   	"aggs": {
 >   		"grades_word_count": {
 >   			"stats": {
@@ -186,6 +236,31 @@ discovery.zen.ping.unicast.hosts: ["127.0.0.1"]
 >   			}
 >   		}
 >   	}
+>   }
+>结果：
+>   {
+>     "took": 2,
+>     "timed_out": false,
+>     "_shards": {
+>       "total": 5,
+>       "successful": 5,
+>       "skipped": 0,
+>       "failed": 0
+>     },
+>     "hits": {
+>       "total": 12,
+>       "max_score": 0,
+>       "hits": []
+>     },
+>     "aggregations": {
+>       "grades_word_count": {
+>         "count": 12,
+>         "min": 1000,
+>         "max": 10000,
+>         "avg": 2583.3333333333335,
+>         "sum": 31000
+>       }
+>     }
 >   }
 >```
 >---
