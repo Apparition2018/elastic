@@ -3,6 +3,7 @@
 >1. [高性能elasticsearch ORM开发库使用介绍](https://my.oschina.net/bboss/blog/1556866)
 >2. [windows安装elasticsearch和elasticsearch-head插件](https://www.cnblogs.com/nicknailo/p/9014952.html)
 >2. [elasticsearch aggregation](https://www.jianshu.com/p/5deec629ee4f)
+>3. [elasticsearch 多字段聚合](https://blog.csdn.net/weixin_41279060/article/details/78852704)
 >---
 >### Elasticsearch 配置说明
 >```
