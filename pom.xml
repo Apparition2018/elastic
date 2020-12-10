@@ -4,17 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.ljh</groupId>
-    <artifactId>elastic-stack-parent</artifactId>
+    <artifactId>elastic</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
+        <!-- Elastic Stack 入门 -->
+        <module>elastic-stack</module>
         <!-- ElasticSearch 入门 -->
         <module>elasticsearch-1</module>
         <!-- ElasticSearch 构建博客检索系统 -->
         <module>elasticsearch-2</module>
-        <!-- Elastic Stack 入门 -->
-        <module>elastic-stack</module>
     </modules>
 
 </project>
